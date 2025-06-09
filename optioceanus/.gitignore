@@ -101,7 +101,6 @@ public/build/
 .cache/
 # Comment in the public line in if your project uses Gatsby and not Next.js
 # https://nextjs.org/blog/next-9-1#public-directory-support
-public
 
 # VuePress build output
 .vuepress/dist
@@ -115,3 +114,8 @@ dist/ # Folder output build Vite, sebaiknya di-ignore di Git.
 
 # Vitest coverage output
 coverage/
+
+# dotenv environment variables file
+.env
+.env*.local
+.env.*.local
