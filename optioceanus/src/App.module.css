@@ -1,0 +1,42 @@
+.appContainer {
+}
+
+.navbar {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.navList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px; 
+}
+
+.navItem {
+ 
+}
+
+.navLink {
+  padding: 8px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+  display: inline-block;
+}
+
+.activeNavLink {
+  font-weight: bold;
+}
+
+.navLink:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.themeButtonContainer {
+}

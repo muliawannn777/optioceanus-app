@@ -1,35 +1,88 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
-import ShipList from "../ShipList";
+import { NavLink, Outlet } from "react-router-dom";
 import { useTheme } from "../ThemeContext";
+import styles from "./DashboardPage.module.css";
 
 function DashboardPage() {
-    const { theme } = useTheme();
+  const { theme } = useTheme();
 
-    const dashboardStyles = {
-        padding: '15px',
-        border: `1px solid ${theme === 'light' ? '#007bff' : '#66aaff'}`,
-        borderRadius: '5px',
-        backgroundColor: theme === 'light' ? '#f8f9fa' : '#444444',
-    };
+  const dashboardStyles = {
+    border: `1px solid ${theme === "light" ? "#007bff" : "#66aaff"}`,
+    backgroundColor: theme === "light" ? "#f8f9fa" : "#444444",
+  };
 
-    const navDashboardStyles = { margin: '15px 0', paddingBottom: '10px', borderBottom: `1px solid ${theme === 'light' ? '#ddd' : '#555'}`};
+  const navDashboardStyles = {
+    borderBottom: `1px solid ${theme === "light" ? "#ddd" : "#555"}`,
+  };
 
-    return (
-        <div style={dashboardStyles}>
-            <h2>Dashboard Aplikasi OptiOceanus</h2>
-            <nav style={navDashboardStyles}>
-                <ul style={{ listStyleType: "none", padding: '0', display: 'flex', gap: '20px'}}>
-                    <li><Link to="">Ringkasan</Link></li>
-                    <li><Link to="reports">Laporan</Link></li>
-                    <li><Link to="shiplist">Daftar Kapal</Link></li>
-                </ul>
-            </nav>
-            <div style={{ marginTop: '20px' }}>
-            <Outlet />
-            </div>
-        </div>
-    )
+  const getNavLinkStyle = ({ isActive }) => ({
+    color:
+      theme === "light"
+        ? isActive
+          ? "#0056b3"
+          : "#212529"
+        : isActive
+        ? "#90caf9"
+        : "#e0e0e0",
+    backgroundColor: isActive
+      ? theme === "light"
+        ? "rgba(0, 123, 255, 0.1)"
+        : "rgba(102, 170, 255, 0.15)"
+      : "transparent",
+  });
+
+  return (
+    <div className={styles.dashboardContainer} style={dashboardStyles}>
+      <h2 className={styles.dashboardTitle}>Dashboard Aplikasi OptiOceanus</h2>
+      <nav className={styles.dashboardNav} style={navDashboardStyles}>
+        <ul className={styles.dashboardNavList}>
+          <li>
+            <NavLink
+              to=""
+              end
+              className={({ isActive }) =>
+                isActive
+                  ? `${styles.dashboardNavLink} ${styles.activeDashboardNavLink}`
+                  : styles.dashboardNavLink
+              }
+              style={getNavLinkStyle}
+            >
+              Ringkasan
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="reports"
+              className={({ isActive }) =>
+                isActive
+                  ? `${styles.dashboardNavLink} ${styles.activeDashboardNavLink}`
+                  : styles.dashboardNavLink
+              }
+              style={getNavLinkStyle}
+            >
+              Laporan
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="shiplist"
+              className={({ isActive }) =>
+                isActive
+                  ? `${styles.dashboardNavLink} ${styles.activeDashboardNavLink}`
+                  : styles.dashboardNavLink
+              }
+              style={getNavLinkStyle}
+            >
+              Daftar Kapal
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+      <div className={styles.dashboardContent}>
+        <Outlet />
+      </div>
+    </div>
+  );
 }
 
 export default DashboardPage;

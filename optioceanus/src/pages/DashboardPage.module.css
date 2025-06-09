@@ -1,0 +1,38 @@
+.dashboardContainer {
+    padding: 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dashboardTitle {
+    margin-bottom: 20px;
+}
+
+.dashboardNav {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+}
+
+.dashboardNavList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.dashboardNavLink {
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.activeDashboardNavLink {
+    font-weight: bold;
+}
+
+.dashboardContent {
+    margin-top: 20px;
+}
