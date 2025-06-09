@@ -42,7 +42,6 @@ function App() {
 
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/about" element={<AboutPage />} />
       <Route path="/dashboard" element={<DashboardPage />}>
         <Route index element={<DashboardSummary />} />
         <Route path="reports" element={<DashboardReports />} />

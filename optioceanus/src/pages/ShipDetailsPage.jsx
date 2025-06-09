@@ -8,7 +8,7 @@ const shipsData = [
     { id: 'E001', name: 'Pertamina Energy', type: 'Tanker', speed: 11, year: 2022 },
 ];
 
-function ShipDetailPage() {
+function ShipDetailsPage() {
     const { shipId } = useParams();
 
     const ship = shipsData.find(s => s.id === shipId);
@@ -36,4 +36,4 @@ function ShipDetailPage() {
     );
 }
 
-export default ShipDetailPage;
+export default ShipDetailsPage;
