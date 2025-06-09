@@ -114,8 +114,3 @@ dist/ # Folder output build Vite, sebaiknya di-ignore di Git.
 
 # Vitest coverage output
 coverage/
-
-# dotenv environment variables file
-.env
-.env*.local
-.env.*.local
