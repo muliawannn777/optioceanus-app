@@ -5,14 +5,15 @@ function DataFetcher() {
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+    const baseApiUrl = import.meta.env.VITE_API_TODOS_URL || "https://jsonplaceholder.typicode.com/todos";
 
     useEffect(() => {
         const fetchData = async () => {
-            setIsLoading(true);
             setError(null);
             try {
-                const response = await axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5');
-               
+                const response = await axios.get(baseApiUrl, {
+                    params: { _limit: 5 }
+                });
                 setData(response.data);
             } catch (e) {
                 setError(e.message);

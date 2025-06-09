@@ -1,12 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Salam from "../Salam";
+import ShipNameForm from "../ShipNameForm";
 import LoginStatus from "../LoginStatus";
 
 function HomePage() {
     return (
         <div>
-            <h2>Halaman Beranda OptiOceanus</h2>
-            <p>Selamat datang di aplikasi optimasi rute kapal Anda!</p>
-            <LoginStatus />
+            <Salam nama="Pengguna OptiOceanus" asal="Pelabuhan Utama" />
+            <h1>Selamat Datang di Aplikasai OptiOceanus</h1>
+            <p>Platform terintegrasi untuk manajemen operasional kapal.</p>
+            <ShipNameForm />
+            <nav>
+                <ul>
+                    <li><Link to="/dashboard">Pergi ke Dashboard</Link></li>
+                    </ul>
+            </nav>
         </div>
     )
 }
