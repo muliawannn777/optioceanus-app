@@ -145,8 +145,8 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/" element={<HomePage />} />
           <Route element={<ProtectedRoute />}>
+            <Route path="/" element={<HomePage />} /> {/* HomePage sekarang dilindungi */}
             <Route path="/dashboard" element={<DashboardPage />}>
               <Route index element={<DashboardSummary />} />
               <Route path="reports" element={<DashboardReports />} />
@@ -158,13 +158,13 @@ function App() {
                   </Panel>
                 }
               />
-              <Route path="cii-calculator" element={<CIICalculatorPage />} /> {/* Tambahkan rute baru */}
+              {/* <Route path="cii-calculator" element={<CIICalculatorPage />} /> */} {/* Rute Kalkulator CII dinonaktifkan */}
             </Route>
+            <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/ship/:shipId" element={<ShipDetailsPage />} />
           </Route>
-          <Route path="/settings" element={<SettingsPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/ship/:shipId" element={<ShipDetailsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>
