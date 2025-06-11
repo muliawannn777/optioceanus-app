@@ -1,0 +1,33 @@
+/* c:\Users\har\Documents\React Projects\optioceanus\src\pages\SettingsPage.module.css */
+.settingsContainer {
+  padding: 20px;
+  border-radius: 8px;
+  margin: 10px 0;
+  /* Warna border dan background akan diatur dari komponen berdasarkan tema */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.pageTitle {
+  margin-bottom: 10px;
+  /* Warna akan diwarisi */
+}
+
+.pageDescription {
+  margin-bottom: 30px;
+  font-size: 1.1em;
+  /* Warna akan diwarisi atau bisa disesuaikan */
+}
+
+.settingsSection {
+  margin-bottom: 30px;
+  padding: 15px;
+  border-radius: 6px;
+  /* Border dan background section bisa diatur berdasarkan tema jika perlu */
+}
+
+.sectionTitle { /* Jika ada judul untuk setiap section di dalam settings */
+  margin-bottom: 15px;
+  font-size: 1.3em;
+  border-bottom: 1px solid #eee; /* Pemisah ringan, bisa disesuaikan tema */
+  padding-bottom: 5px;
+}

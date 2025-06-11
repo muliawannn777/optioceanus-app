@@ -1,5 +1,7 @@
 import React, { useState, useEffect} from "react";
 import axios from 'axios';
+import { useTheme } from "./ThemeContext"; 
+import styles from "./DataFetcher.module.css"; 
 
 function DataFetcher() {
     const [data, setData] = useState(null);
@@ -7,6 +9,7 @@ function DataFetcher() {
     const [error, setError] = useState(null);
     const baseApiUrl = import.meta.env.VITE_API_TODOS_URL || "https://jsonplaceholder.typicode.com/todos";
 
+    const { theme } = useTheme();
     useEffect(() => {
         const fetchData = async () => {
             setError(null);
@@ -23,33 +26,55 @@ function DataFetcher() {
             }
         };
         fetchData();
-    }, [])
+    }, [baseApiUrl]) 
+
+    const loadingMessageStyle = {
+        color: theme === 'light' ? '#004085' : '#cce5ff',
+    };
+
+    const errorMessageStyle = {
+        color: theme === 'light' ? '#721c24' : '#f8d7da',
+        backgroundColor: theme === 'light' ? '#f8d7da' : 'rgba(114, 28, 36, 0.3)',
+        border: `1px solid ${theme === 'light' ? '#f5c6cb' : '#721c24'}`, 
+    };
+
+    const todoItemStyle = {
+        borderBottom: `1px solid ${theme === 'light' ? '#eeeeee' : '#444444'}`,
+    }
+
+    const spinnerStyle = {
+        borderLeftColor: theme === 'light' ? '#007bff' : '#66aaff',
+    };
 
     if (isLoading) {
-        return <p style={{ color: 'blue'}}>Memuat data...</p>
+        return (
+            <div className={styles.spinnerContainer}>
+                <div className={styles.spinner} style={spinnerStyle}></div>
+                <p style={loadingMessageStyle}>Memuat data...</p>
+            </div>
+        );
     }
 
     if (error) {
-        return <p style={{ color: 'red'}}>Terjadi kesalahan: {error}</p>
+        return <p className={styles.errorMessage} style={errorMessageStyle}>Terjadi kesalahan: {error}</p>
     }
 
     return (
-            <div style={{ border: '1px solid dodgerblue', margin: '10px', padding: '10px'}}>
-            <h3>Data Todos dari API (JSONPlaceholder)</h3>
+            <>
             {data ? (
-                <ul>
+                <ul className={styles.todoList}>
                     {data.map(todo => (
-                        <li key={todo.id} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
+                        <li key={todo.id} className={`${styles.todoItem} ${todo.completed ? styles.completedTodo : ''}`} style={todoItemStyle}>
                             {todo.title}
                         </li>
                     ))}
                 </ul>
             ) : (
-                <p>Tidak ada data.</p>
+                <p className={styles.noDataMessage}>Tidak ada data.</p>
             )}
-            </div>
+            </>
     )
-    
+
 }
 
 export default DataFetcher;

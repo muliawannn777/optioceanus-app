@@ -1,0 +1,50 @@
+.voyageForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid; /* Warna akan diatur oleh inline style */
+    font-size: 1em;
+    background-color: inherit; /* Agar style inline background-color bekerja */
+    color: inherit; /* Agar style inline color bekerja */
+}
+
+.formSection {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ccc; /* Sesuaikan dengan tema */
+}
+
+.sectionTitle {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.errorMessage {
+    color: #dc3545;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.formActions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+/* Tambahkan style untuk .submitButton dan .cancelButton jika diperlukan, atau gunakan dari AddShipForm.module.css jika generik */

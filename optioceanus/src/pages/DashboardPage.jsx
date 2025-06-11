@@ -1,18 +1,19 @@
 import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom"; // NavLink sudah diimpor
 import { useTheme } from "../ThemeContext";
 import styles from "./DashboardPage.module.css";
 
 function DashboardPage() {
   const { theme } = useTheme();
 
-  const dashboardStyles = {
-    border: `1px solid ${theme === "light" ? "#007bff" : "#66aaff"}`,
-    backgroundColor: theme === "light" ? "#f8f9fa" : "#444444",
+  // Style dinamis yang masih memerlukan theme untuk border
+  const dashboardContainerStyleWithTheme = {
+    border: `1px solid ${theme === "light" ? "#dee2e6" : "#495057"}`, // Warna border yang lebih netral
+    // backgroundColor bisa diatur di sini atau diwarisi dari App.jsx jika .appContainer sudah cukup
   };
 
-  const navDashboardStyles = {
-    borderBottom: `1px solid ${theme === "light" ? "#ddd" : "#555"}`,
+  const navStyleWithTheme = {
+    borderBottom: `1px solid ${theme === "light" ? "#e0e0e0" : "#444"}`, // Konsisten dengan App.jsx
   };
 
   const getNavLinkStyle = ({ isActive }) => ({
@@ -32,9 +33,9 @@ function DashboardPage() {
   });
 
   return (
-    <div className={styles.dashboardContainer} style={dashboardStyles}>
+    <div className={styles.dashboardContainer} style={dashboardContainerStyleWithTheme}>
       <h2 className={styles.dashboardTitle}>Dashboard Aplikasi OptiOceanus</h2>
-      <nav className={styles.dashboardNav} style={navDashboardStyles}>
+      <nav className={styles.dashboardNav} style={navStyleWithTheme}>
         <ul className={styles.dashboardNavList}>
           <li>
             <NavLink
@@ -50,6 +51,19 @@ function DashboardPage() {
               Ringkasan
             </NavLink>
           </li>
+          {/* <li> 
+            <NavLink
+              to="cii-calculator"
+              className={({ isActive }) =>
+                isActive
+                  ? `${styles.dashboardNavLink} ${styles.activeDashboardNavLink}`
+                  : styles.dashboardNavLink
+              }
+              style={getNavLinkStyle}
+            >
+              Kalkulator CII
+            </NavLink>
+          </li> */} {/* Link Navigasi Kalkulator CII dinonaktifkan */}
           <li>
             <NavLink
               to="reports"

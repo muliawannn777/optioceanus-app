@@ -1,0 +1,96 @@
+.detailsGrid {
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    gap: 10px 20px; 
+    align-items: center;
+}
+
+.detailsGrid p {
+    margin: 0; 
+    padding: 5px 0; 
+}
+
+.detailsGrid strong {
+    font-weight: bold; 
+}
+
+@media (max-width: 500px) { 
+  .detailsGrid {
+    grid-template-columns: 1fr; 
+    gap: 5px; 
+  }
+}
+
+.actionButtonsContainer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.voyagesSection {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc; /* Sesuaikan dengan tema nanti jika perlu */
+}
+
+.voyagesSection h4 {
+    margin-bottom: 15px;
+}
+
+.voyageList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.voyageListItem {
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #eee; /* Sesuaikan dengan tema nanti jika perlu */
+  border-radius: 4px;
+  background-color: #f9f9f9; /* Sesuaikan dengan tema nanti jika perlu */
+}
+
+.voyageListItem p {
+    margin-bottom: 5px;
+}
+
+.voyageItemActions {
+    margin-top: 10px;
+    display: flex;
+}
+
+.chartsSection {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc; /* Sesuaikan dengan tema nanti jika perlu */
+}
+
+.simulationSection {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc; /* Sesuaikan dengan tema nanti jika perlu */
+}
+
+.simulationSection .formGroup { /* Styling untuk form group di dalam simulasi */
+    margin-bottom: 15px;
+}
+
+.simulationSection label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.simulationResultGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Parameter, Historis, Simulasi, Perubahan */
+    gap: 10px;
+    margin-top: 15px;
+}
+.simulationResultGrid > div { padding: 5px; border-bottom: 1px solid #eee; }
+.simulationResultGrid > div:nth-child(-n+4) { font-weight: bold; } /* Header tebal */
+
+.subText {
+    font-size: 0.85em;
+    color: #777; /* Sesuaikan dengan tema jika perlu */
+}

@@ -1,0 +1,75 @@
+.formWrapper {
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid; 
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.slider {
+    width: 100%; /* Slider mengambil lebar penuh */
+    cursor: pointer;
+    /* Styling tambahan untuk thumb dan track bisa ditambahkan di sini jika diperlukan */
+}
+
+.formTitle {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.sectionTitle {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    border-bottom: 1px solid #ccc; /* Sesuaikan warna dengan tema */
+    padding-bottom: 5px;
+}
+.addShipForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.formGroup input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid; 
+    font-size: 1em;
+}
+
+.formActions {
+    display: flex;
+    gap: 10px; 
+}
+
+.submitButton {
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: filter 0.2s ease-in-out;    
+    flex-grow: 1; 
+}
+
+.submitButton:hover {
+    filter: brightness(90%);
+}
+
+@media (max-width: 600px) { 
+  .formActions {
+    flex-direction: column;
+  }
+}

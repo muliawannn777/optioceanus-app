@@ -1,0 +1,9 @@
+/* c:\Users\har\Documents\Belajar React Mandiri Gemini AI Assist\optioceanus\src\Salam.module.css */
+.salamText {
+  font-size: 1.3em; /* Sedikit lebih kecil dari h1, lebih besar dari p standar */
+  margin-bottom: 15px; /* Beri sedikit spasi bawah */
+  font-weight: 500;
+  /* Warna akan diwarisi dari parent atau bisa diatur di sini jika perlu */
+  /* Contoh: color: #4a4a4a; */
+  /* Jika ingin warna berubah berdasarkan tema, perlu dihandle di Salam.jsx */
+}

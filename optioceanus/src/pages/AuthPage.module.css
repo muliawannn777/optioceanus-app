@@ -1,0 +1,51 @@
+/* c:\Users\har\Documents\React Projects\optioceanus\src\pages\AuthPage.module.css */
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px; /* Batasi lebar form */
+    margin: 0 auto; /* Pusatkan form di dalam panel */
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.formGroup input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid; /* Warna border akan diatur oleh style inline di komponen JS */
+    font-size: 1em;
+    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.submitButton {
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: filter 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.submitButton:hover:not(:disabled) {
+    filter: brightness(90%);
+}
+
+.submitButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.errorMessage {
+    color: #dc3545; /* Warna merah untuk pesan error */
+    font-size: 0.9em;
+    margin-top: -10px; /* Kurangi jarak atas */
+}

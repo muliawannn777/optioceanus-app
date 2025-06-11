@@ -1,16 +1,21 @@
+/* DashboardPage.module.css */
 .dashboardContainer {
     padding: 20px;
     border-radius: 8px;
+    margin-top: 20px; 
     transition: background-color 0.3s ease, border-color 0.3s ease;
+    /* backgroundColor akan diatur oleh inline style jika diperlukan, atau diwarisi */
 }
 
 .dashboardTitle {
-    margin-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 20px; /* Disesuaikan dari 15px */
 }
 
 .dashboardNav {
-    margin-bottom: 25px;
-    padding-bottom: 15px;
+    margin-bottom: 20px; /* Disesuaikan dari 10px */
+    padding-bottom: 10px; /* Disesuaikan dari 15px */
+    /* border-bottom akan diatur oleh inline style */
 }
 
 .dashboardNavList {
@@ -18,7 +23,7 @@
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 10px;
+    gap: 20px; /* Disesuaikan dari 10px */
 }
 
 .dashboardNavLink {
@@ -27,12 +32,37 @@
     text-decoration: none;
     display: inline-block;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    /* Warna dan background dasar akan diatur oleh getNavLinkStyle */
+}
+
+.dashboardNavLink:hover {
+    /* Efek hover bisa ditambahkan di sini jika getNavLinkStyle tidak menanganinya,
+       atau jika ingin efek hover yang berbeda untuk link non-aktif */
+    /* Contoh: filter: brightness(95%); */
 }
 
 .activeDashboardNavLink {
-    font-weight: bold;
+    /* Gaya spesifik untuk link aktif yang tidak ditangani oleh getNavLinkStyle.
+       getNavLinkStyle sudah menangani warna dan background.
+       Mungkin font-weight atau border tambahan? */
+    font-weight: bold; /* Contoh, jika getNavLinkStyle belum mengatur ini */
 }
 
 .dashboardContent {
     margin-top: 20px;
+}
+
+/* Media Query untuk layar yang lebih kecil */
+@media (max-width: 600px) {
+    .dashboardNavList {
+        flex-direction: column; /* Tumpuk item navigasi secara vertikal */
+        align-items: stretch; /* Buat item mengambil lebar penuh */
+        gap: 8px; /* Sesuaikan gap untuk tampilan vertikal */
+    }
+
+    .dashboardNavLink {
+        display: block; /* Buat link mengambil lebar penuh dari li */
+        text-align: center; /* Pusatkan teks link */
+        padding: 10px 12px; /* Sedikit tambah padding vertikal untuk tampilan blok */
+    }
 }

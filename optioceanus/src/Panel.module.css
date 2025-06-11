@@ -1,21 +1,22 @@
 .panelContainer {
-    border: 1px solid #e0e0e0;
     padding: 15px;
     margin: 15px 0;
     border-radius: 8px;
-    background-color: #f9f9f9;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid; /* Border akan diwarnai oleh style prop */
+    /* backgroundColor akan diwarnai oleh style prop */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Tambahkan transisi */
 }
 
 .panelTitle {
     margin-top: 0;
     margin-bottom: 10px;
-    color: #333;
     font-size: 1.2em;
-    border-bottom: 1px solid #eee;
     padding-bottom: 8px;
+    border-bottom: 1px solid; /* Border akan diwarnai oleh style prop */
+    /* color akan diwarnai oleh style prop */
 }
 
 .panelContent {
-    color: #555;
+    /* color akan diwarnai oleh style prop */
 }

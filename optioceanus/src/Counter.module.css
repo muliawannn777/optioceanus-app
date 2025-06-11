@@ -1,0 +1,31 @@
+.counterContainer {
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 10px 0;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.counterTitle {
+  margin-bottom: 10px;
+}
+
+.countDisplay {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.counterButton {
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-weight: 500;
+  cursor: pointer;
+}

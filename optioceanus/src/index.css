@@ -3,6 +3,9 @@
   line-height: 1.5;
   font-weight: 400;
 
+  /* color-scheme, color, dan background-color default dihapus 
+     karena tema diatur oleh ThemeContext dan App.jsx */
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -10,6 +13,11 @@
   -webkit-text-size-adjust: 100%;
 }
 
+html {
+  overflow-y: scroll; /* Selalu tampilkan scrollbar vertikal */
+}
+
+/* Reset dasar */
 * {
   margin: 0;
   padding: 0;
@@ -18,15 +26,19 @@
 
 a {
   font-weight: 500;
-  text-decoration: none;
+  /* Warna link akan diatur berdasarkan tema di App.jsx atau komponen spesifik */
+  text-decoration: none; /* Menghapus garis bawah default */
 }
 a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Menambahkan garis bawah saat hover (untuk link teks biasa) */
+  /* Untuk link yang di-styling sebagai tombol, efek hover diatur di CSS Module masing-masing */
 }
 
 body {
   margin: 0;
   min-height: 100vh;
+  /* Warna latar body dan warna teks default diatur di App.jsx berdasarkan tema */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transisi untuk body */
 }
 
 h1 {
@@ -34,9 +46,8 @@ h1 {
   line-height: 1.1;
   margin-bottom: 0.5em;
 }
-
 h2 {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.4em;
 }
 
 button {
@@ -47,10 +58,21 @@ button {
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  /* Warna latar belakang dan border tombol akan diatur berdasarkan tema atau per komponen */
 }
-
+button:hover {
+  filter: brightness(90%); /* Gelapkan sedikit warna latar tombol saat hover */
+}
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Media Query untuk penyesuaian font di layar yang lebih kecil */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.4em; /* Kurangi ukuran font h1 */
+  }
+  /* Anda bisa menambahkan penyesuaian lain untuk layar kecil di sini jika perlu */
 }

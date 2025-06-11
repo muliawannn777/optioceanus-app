@@ -1,0 +1,88 @@
+/* c:\Users\har\Documents\React Projects\optioceanus\src\ShipList.module.css */
+.shipListContainer {
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0; /* Sesuaikan margin agar konsisten */
+  /* Warna border dan background akan diatur dari komponen berdasarkan tema */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.shipListTitle {
+  margin-bottom: 15px;
+  /* Warna akan diwarisi */
+}
+
+.shipListUl {
+  list-style-type: none;
+  padding: 0;
+}
+
+.shipListItem {
+  margin-bottom: 10px;
+  border-radius: 4px;
+  /* Efek transisi untuk hover dipindahkan ke shipItemContent atau shipListItemLink jika perlu */
+  /* background-color akan diatur oleh inline style dari komponen */
+  display: flex; /* Untuk mengatur konten di dalamnya */
+  align-items: center; /* Menyelaraskan item secara vertikal */
+  justify-content: space-between; /* Memberi ruang antara link dan tombol */
+  padding: 10px; /* Padding dipindahkan ke li */
+  transition: filter 0.2s ease-in-out; /* Efek hover pada seluruh item */
+}
+
+.shipListItem:hover {
+  filter: brightness(95%); /* Gelapkan sedikit warna latar saat hover */
+}
+
+.shipItemContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.shipListItemLink {
+  text-decoration: none;
+  flex-grow: 1; /* Agar link mengambil sisa ruang */
+  color: inherit; /* Mewarisi warna teks dari parent (li) */
+  /* padding: 10px; */ /* Padding sekarang di .shipListItem */
+}
+
+/* Gaya untuk hover pada item list */
+/* .shipListItemLink:hover { */
+  /* filter: brightness(95%); */ /* Efek hover sekarang di .shipListItem */
+/* } */
+
+.noShipsMessage {
+  padding: 15px;
+  text-align: center;
+  font-style: italic;
+}
+
+.deleteButton:hover {
+  filter: brightness(85%);
+}
+
+.filterControls {
+  display: flex; /* Atur agar input dan select bersebelahan */
+  gap: 10px; /* Jarak antara input dan select */
+  margin-bottom: 15px; /* Jarak ke daftar kapal */
+  align-items: center; /* Selaraskan item secara vertikal */
+}
+
+/* Penyesuaian untuk layar kecil jika filterControls menjadi terlalu sempit */
+@media (max-width: 768px) { /* Atau breakpoint lain yang sesuai */
+  .filterControls {
+    flex-direction: column; /* Tumpuk filter controls di layar kecil */
+    align-items: stretch; /* Buat input dan select mengambil lebar penuh */
+  }
+  .filterSelect { /* Jika menggunakan kelas .filterSelect */
+    margin-left: 0; /* Hapus margin kiri jika ditumpuk */
+  }
+}
+
+@media (max-width: 600px) { /* Mungkin breakpoint yang sedikit lebih kecil untuk item list */
+  .shipItemContent {
+    flex-direction: column; /* Tumpuk konten item kapal */
+    align-items: flex-start; /* Selaraskan ke kiri saat ditumpuk */
+  }
+}

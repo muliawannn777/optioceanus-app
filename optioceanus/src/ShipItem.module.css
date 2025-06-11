@@ -1,0 +1,13 @@
+.shipItemContainer {
+  
+}
+
+.shipName {
+  margin: 0 0 5px 0;
+  font-size: 1.1em;
+}
+
+.shipType {
+  margin: 0;
+  font-size: 0.9em;
+}

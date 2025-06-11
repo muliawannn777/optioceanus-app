@@ -1,0 +1,20 @@
+/* c:\Users\har\Documents\React Projects\optioceanus\src\pages\dashboard\DashboardReports.module.css */
+.reportsContainer {
+  /* Gaya untuk kontainer utama halaman laporan jika diperlukan */
+}
+
+.reportSection {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px dashed #ccc; /* Pemisah antar sub-bagian laporan */
+}
+
+.reportSection:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.reportSection h4 {
+  margin-bottom: 8px;
+}

@@ -1,0 +1,38 @@
+.ciiForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.calculateButton {
+    padding: 10px 15px;
+    font-size: 1em;
+    /* Warna diatur oleh inline style */
+}
+
+.resultSection {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc; /* Sesuaikan dengan tema */
+    border-radius: 5px;
+}
+
+.resultSection h4 {
+    margin-bottom: 10px;
+}
+
+.resultSection p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
